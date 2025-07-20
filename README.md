@@ -1,4 +1,4 @@
-# Studio Anjou - Static Website
+# StudioAnjou - Static Website
 
 This was converted to a completely static site from a WordPress site.
 It's markup is therefore a bit shite. But it works. And is fast. And never requires upgrading. And is cheap to host. And is un-hackable.
