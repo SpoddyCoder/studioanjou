@@ -1,6 +1,6 @@
 # Studio Anjou - Static Website
 
-This is a static HTML version of the Studio Anjou WordPress website, converted for static hosting.
+A clean, minimal static website for Studio Anjou featuring a "coming soon" page with social sharing functionality.
 
 ## Structure
 
@@ -26,9 +26,10 @@ studioanjou/
 
 - **Responsive Design**: Works on desktop, tablet, and mobile devices
 - **Local Assets**: All images, fonts, and CSS are hosted locally
-- **Clean Code**: Simplified HTML structure without WordPress dependencies
+- **Clean Code**: Minimal HTML structure with optimized CSS
 - **SEO Optimized**: Includes proper meta tags and Open Graph data
 - **Fast Loading**: Optimized for static hosting
+- **Social Sharing**: Built-in social media sharing buttons
 
 ## Local Development
 
@@ -57,12 +58,6 @@ This static site can be deployed to any static hosting service:
 - **AWS S3**: Upload files to an S3 bucket with static website hosting
 - **Cloudflare Pages**: Connect your Git repository
 
-## Original Source
+## Live Site
 
-This was converted from a WordPress site using the Twenty Twenty-Two theme. The original site can be found at: https://studioanjou.com/
-
-## License
-
-The original WordPress theme (Twenty Twenty-Two) is licensed under the GNU GPL v2 or later. 
-
-https://www.facebook.com/sharer/sharer.php?u=https://studioanjou.com/
+The live site can be found at: https://studioanjou.com/
