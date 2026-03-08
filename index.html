@@ -1,399 +1,259 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio Anjou | Digital Artworking & Artwork Production</title>
+    <meta name="description" content="Studio Anjou provides professional digital artwork production, artwork updates, retouching and prepress preparation. Freelance digital artworker Angela Fernihough working remotely in the UK.">
+    
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        :root {
+            --accent: #d46aa5;
+            --accent-light: #f7c4d7;
+            --bg: #f7f7f5;
+            --text: #333;
+            --divider: #e5e2dd;
+            --white: #ffffff;
+        }
 
-<title>Studio Anjou | Digital Artworking Services</title>
+        html { scroll-behavior: smooth; }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            margin: 0; 
+            background: var(--bg); 
+            color: var(--text); 
+            line-height: 1.6; 
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
 
-<style>
+        /* GRAPHIC BANNER: Organic Wave & Layered Gradient */
+        .logo-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 480px;
+            background: 
+                radial-gradient(circle at 10% 20%, rgba(252, 228, 236, 0.8) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(243, 198, 213, 0.6) 0%, transparent 40%),
+                linear-gradient(160deg, #fff5f8 0%, #e58ab6 100%);
+            clip-path: ellipse(130% 65% at 50% 30%);
+            opacity: 0.7;
+            z-index: -1;
+        }
 
-html{
-scroll-behavior:smooth;
-}
+        /* NAVIGATION */
+        nav { 
+            position: sticky; 
+            top: 0; 
+            background: rgba(255, 255, 255, 0.85); 
+            backdrop-filter: blur(10px); 
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--divider); 
+            z-index: 100; 
+        }
+        .nav-inner { 
+            max-width: 900px; 
+            margin: auto; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 16px 20px; 
+        }
+        .nav-logo { font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: 1.5px; font-size: 13px; }
+        .nav-links a { margin-left: 24px; text-decoration: none; color: #666; font-size: 14px; font-weight: 500; transition: .3s; }
+        .nav-links a:hover { color: var(--accent); }
 
-body{
-font-family: Arial, Helvetica, sans-serif;
-margin:0;
-color:#333;
-background:#F6E3EC;
-line-height:1.6;
-}
+        /* HEADER & LOGO BOX */
+        .container { max-width: 900px; margin: auto; padding: 20px; }
+        header { text-align: center; padding: 100px 20px 60px; }
+        
+        .logo-box { 
+            background: var(--white); 
+            display: inline-block; 
+            padding: 40px 50px; 
+            border-radius: 16px; 
+            box-shadow: 0 15px 35px rgba(212, 106, 165, 0.12); 
+            transition: transform 0.4s ease;
+        }
+        .logo-box:hover { transform: translateY(-5px); }
+        header img { max-width: 240px; height: auto; }
+        
+        .tagline { 
+            margin-top: 30px; 
+            font-family: 'Playfair Display', serif; 
+            font-size: 30px; 
+            color: var(--accent); 
+            font-weight: 600; 
+            letter-spacing: -0.5px;
+        }
 
-/* NAVIGATION */
+        /* TEXT SECTIONS */
+        .intro { max-width: 680px; margin: 50px auto; text-align: center; font-size: 18px; color: #444; }
+        section { margin: 120px 0; }
+        h2 { font-family: 'Playfair Display', serif; font-size: 34px; margin-bottom: 12px; text-align: center; color: #222; }
+        .section-divider { width: 40px; height: 3px; background: var(--accent); margin: 0 auto 50px; border-radius: 10px; }
 
-nav{
-position:fixed;
-top:0;
-width:100%;
-background:white;
-box-shadow:0 2px 6px rgba(0,0,0,0.08);
-z-index:100;
-}
+        /* SERVICES */
+        .services-section {
+            background: linear-gradient(135deg, #ffffff 0%, #fffbfd 100%);
+            padding: 70px 45px;
+            border-radius: 24px;
+            border: 1px solid #fae1eb;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+        }
+        .services { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        ul { list-style: none; padding: 0; margin: 0; }
+        li { margin-bottom: 18px; padding-left: 28px; position: relative; font-size: 15px; color: #555; }
+        li::before { content: "→"; position: absolute; left: 0; color: var(--accent); font-weight: bold; }
 
-.nav-inner{
-max-width:1000px;
-margin:auto;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:15px 20px;
-}
+        /* UPDATED SOFTWARE PILLS */
+        .software-tags { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: 50px; }
+        .software-tags span { 
+            background: var(--white); 
+            padding: 8px 18px; 
+            border-radius: 50px; 
+            font-size: 13px; 
+            border: 1px solid var(--divider); 
+            color: #555; 
+            font-weight: 600; 
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04); 
+        }
 
-.nav-links a{
-margin-left:20px;
-text-decoration:none;
-color:#C73C84;
-font-weight:bold;
-}
+        /* CONTACT BUTTONS */
+        .contact { text-align: center; }
+        .btn { 
+            display: inline-block; 
+            margin-top: 20px; 
+            padding: 14px 36px; 
+            background: var(--accent); 
+            color: white !important; 
+            text-decoration: none; 
+            border-radius: 50px; 
+            font-weight: 600; 
+            font-size: 16px;
+            transition: all 0.3s ease; 
+            border: none;
+            box-shadow: 0 10px 20px rgba(212, 106, 165, 0.2);
+        }
+        .btn:hover { 
+            transform: translateY(-3px); 
+            box-shadow: 0 15px 25px rgba(212, 106, 165, 0.3); 
+            background: #c25a94;
+        }
 
-/* HERO */
+        .linkedin-link { 
+            display: block; 
+            margin-top: 30px; 
+            color: #777; 
+            text-decoration: none; 
+            font-size: 14px; 
+            font-weight: 500;
+            transition: .2s; 
+        }
+        .linkedin-link:hover { color: var(--accent); }
 
-.hero{
-position:relative;
-padding:160px 20px 120px 20px;
-text-align:center;
-color:white;
-background:#C73C84;
-overflow:hidden;
-}
+        footer { 
+            text-align: center; 
+            margin-top: 120px; 
+            padding: 50px 20px; 
+            font-size: 13px; 
+            color: #aaa; 
+            border-top: 1px solid var(--divider); 
+        }
 
-.hero::before{
-content:"";
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background-image:url("images/anjou-pattern.png");
-background-size:cover;
-background-position:center;
-opacity:0.18;
-}
-
-.hero-content{
-position:relative;
-z-index:2;
-}
-
-/* LOGO CARD */
-
-.logo-card{
-display:inline-block;
-background:white;
-padding:20px;
-border-radius:6px;
-margin-bottom:20px;
-}
-
-.logo-card img{
-max-width:160px;
-display:block;
-}
-
-/* HERO TEXT */
-
-.hero h1{
-margin:0;
-font-size:38px;
-}
-
-.hero h3{
-margin:8px 0 10px 0;
-font-weight:normal;
-}
-
-.hero p{
-margin:10px 0;
-font-size:18px;
-}
-
-.linkedin{
-display:inline-block;
-margin-top:15px;
-padding:10px 18px;
-background:white;
-color:#C73C84;
-border-radius:4px;
-text-decoration:none;
-font-weight:bold;
-}
-
-/* CONTENT */
-
-.container{
-max-width:1000px;
-margin:auto;
-padding:60px 25px;
-}
-
-h2{
-color:#C73C84;
-margin-bottom:20px;
-}
-
-/* SERVICES */
-
-.services{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-gap:20px;
-margin-top:30px;
-}
-
-.service-box{
-background:white;
-padding:22px;
-border-radius:6px;
-box-shadow:0 2px 8px rgba(0,0,0,0.08);
-}
-
-.service-box h3{
-margin-top:0;
-}
-
-/* FORM */
-
-form{
-display:flex;
-flex-direction:column;
-gap:10px;
-margin-top:20px;
-}
-
-input, textarea, select{
-padding:10px;
-border:1px solid #ccc;
-border-radius:4px;
-font-size:14px;
-}
-
-button{
-background:#C73C84;
-color:white;
-border:none;
-padding:12px;
-border-radius:4px;
-cursor:pointer;
-font-size:15px;
-}
-
-button:hover{
-background:#A92F6D;
-}
-
-/* FOOTER */
-
-footer{
-background:#E14F9A;
-color:white;
-text-align:center;
-padding:30px;
-margin-top:40px;
-}
-
-footer a{
-color:white;
-text-decoration:none;
-font-weight:bold;
-}
-
-</style>
-
+        @media(max-width:768px){
+            header { padding: 80px 20px 40px; }
+            .tagline { font-size: 24px; }
+            .services { grid-template-columns: 1fr; gap: 20px; }
+            .nav-inner { flex-direction: column; gap: 15px; }
+            .services-section { padding: 40px 25px; }
+        }
+    </style>
 </head>
 
 <body>
 
-
-<!-- NAVBAR -->
-
-<nav>
-
-<div class="nav-inner">
-
-<strong>Studio Anjou</strong>
-
-<div class="nav-links">
-<a href="#about">About</a>
-<a href="#services">Services</a>
-<a href="#contact">Contact</a>
-</div>
-
-</div>
-
-</nav>
-
-
-<!-- HERO -->
-
-<header class="hero">
-
-<div class="hero-content">
-
-<div class="logo-card">
-<img src="studio_anjou_logo.png" alt="Studio Anjou Logo">
-</div>
-
-<h1>Studio Anjou</h1>
-
-<h3>Angela Fernihough</h3>
-
-<p>Digital Artworking & Artwork Production</p>
-
-<p>15+ Years Experience | Remote Studio | Based in the UK</p>
-
-<p><strong>Trusted by agencies, publishers and marketing teams</strong></p>
-
-<a class="linkedin" href="https://www.linkedin.com/in/angelafernihough/" target="_blank">
-View LinkedIn Profile
-</a>
-
-</div>
-
-</header>
-
-
-
-<!-- ABOUT -->
-
-<section class="container" id="about">
-
-<h2>About</h2>
-
-<p>
-Studio Anjou is a solo digital artwork studio run by Angela Fernihough. With more than 15 years of
-experience in artwork production and prepress, I specialise in refining, adapting and preparing
-artwork for print and digital use.
-</p>
-
-<p>
-I work extensively with Adobe Photoshop and Adobe Illustrator to retouch, update, recolour and
-prepare artwork to professional production standards.
-</p>
-
-<p>
-Working remotely from the UK, I support agencies, printers and businesses with reliable artwork
-services including artwork updates, retouching, recolouring and batch artwork processing.
-My focus is always on delivering accurate, production-ready files that meet technical specifications.
-</p>
-
-<p>
-Bilingual communication available in English and French.
-</p>
-
-</section>
-
-
-
-<!-- SERVICES -->
-
-<section class="container" id="services">
-
-<h2>Services</h2>
-
-<div class="services">
-
-<div class="service-box">
-<h3>Print Artwork Preparation</h3>
-<p>Preparing files for professional print including bleed setup, colour conversion and press-ready PDFs.</p>
-</div>
-
-<div class="service-box">
-<h3>Artwork Adaptation</h3>
-<p>Updating and reworking existing artwork for new formats, campaigns, languages or product variations.</p>
-</div>
-
-<div class="service-box">
-<h3>Retouching</h3>
-<p>Cleaning, refining and enhancing artwork using Adobe Photoshop.</p>
-</div>
-
-<div class="service-box">
-<h3>Recolouring</h3>
-<p>Updating artwork colours to match brand guidelines or Pantone specifications.</p>
-</div>
-
-<div class="service-box">
-<h3>Batch Artwork Processing</h3>
-<p>Preparing large volumes of artwork files efficiently and consistently.</p>
-</div>
-
-<div class="service-box">
-<h3>Vector Artwork</h3>
-<p>Redrawing and preparing vector artwork using Adobe Illustrator.</p>
-</div>
-
-<div class="service-box">
-<h3>Instructional & Educational Graphics</h3>
-<p>Creation of clear diagrams and visuals for manuals, guides and training materials.</p>
-</div>
-
-<div class="service-box">
-<h3>Ongoing Artwork Support</h3>
-<p>Reliable artwork production support for agencies and businesses requiring regular updates or campaign rollouts.</p>
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- CONTACT -->
-
-<section class="container" id="contact">
-
-<h2>Project Enquiry</h2>
-
-<p>If you'd like to discuss an artwork project, please send a few details below and I'll get back to you.</p>
-
-<p><em>English and French enquiries welcome.</em></p>
-
-<form action="https://formspree.io/f/yourID" method="POST">
-
-<input type="text" name="name" placeholder="Your Name" required>
-
-<input type="email" name="email" placeholder="Email Address" required>
-
-<input type="text" name="company" placeholder="Company (optional)">
-
-<select name="project">
-
-<option>Artwork Preparation</option>
-<option>Artwork Updates</option>
-<option>Retouching</option>
-<option>Recolouring</option>
-<option>Batch Artwork Processing</option>
-<option>Instructional Graphics</option>
-<option>Other</option>
-
-</select>
-
-<textarea name="message" rows="5" placeholder="Tell me about your project"></textarea>
-
-<button type="submit">Send Enquiry</button>
-
-</form>
-
-</section>
-
-
-
-<!-- FOOTER -->
-
-<footer>
-
-<p>© Studio Anjou | Angela Fernihough</p>
-
-<p>
-<a href="https://www.linkedin.com/in/angelafernihough/" target="_blank">
-LinkedIn
-</a>
-</p>
-
-</footer>
-
+    <div class="logo-background"></div>
+
+    <nav>
+        <div class="nav-inner">
+            <div class="nav-logo">Studio Anjou</div>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <header>
+        <div class="logo-box">
+            <img src="logo.png" alt="Studio Anjou logo">
+        </div>
+        <div class="tagline">Artwork Production & Digital Artworking Support</div>
+    </header>
+
+    <div class="container">
+        
+        <section id="about">
+            <div class="intro">
+                <p><strong>Studio Anjou</strong> is the freelance digital artwork studio of <strong>Angela Fernihough</strong>, a UK-based artworker with over 15 years of experience supporting design studios, publishers and marketing teams.</p>
+                <p>I specialise in preparing, refining and updating artwork for print and digital use — helping creative teams deliver accurate, production-ready files.</p>
+                <p>Based in the UK and working remotely, I collaborate with clients nationally and internationally.</p>
+            </div>
+        </section>
+
+        <section id="services" class="services-section">
+            <h2>Services</h2>
+            <div class="section-divider"></div>
+            <div class="services">
+                <ul>
+                    <li>Artwork production and artwork updates</li>
+                    <li>Preparing files for print and digital publication</li>
+                    <li>Artwork corrections and amends</li>
+                    <li>Image retouching and clean-up</li>
+                    <li>Recolouring graphics and illustrations</li>
+                </ul>
+                <ul>
+                    <li>Batch artwork file preparation</li>
+                    <li>Versioning and localisation of artwork</li>
+                    <li>Converting artwork between formats</li>
+                    <li>Rebuilding or refining existing artwork</li>
+                    <li>Simple website graphics and interface elements</li>
+                </ul>
+            </div>
+            
+            <div class="software-tags">
+                <span>Adobe Photoshop</span>
+                <span>Adobe Illustrator</span>
+                <span>Vector Illustration</span>
+                <span>Digital Assets</span>
+                <span>Color Management</span>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <h2>Get in Touch</h2>
+            <div class="section-divider"></div>
+            <p>For freelance artwork enquiries please email</p>
+            <a href="mailto:angela@studioanjou.com" class="btn">angela@studioanjou.com</a>
+            
+            <a href="https://www.linkedin.com/in/angelafernihough/" target="_blank" class="linkedin-link">
+                Connect on LinkedIn →
+            </a>
+        </section>
+
+    </div>
+
+    <footer>
+        &copy; 2026 Studio Anjou — Digital Artworking & Artwork Production<br>
+        Freelance artworker Angela Fernihough | UK Remote Studio
+    </footer>
 
 </body>
 </html>
